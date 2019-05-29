@@ -11,20 +11,29 @@ def iniciar_tablero(dimension=5):
     tablero = []
     for _ in range(dimension):
         tablero.append(fila)
-
     return tablero
 
 
 def mostrar_fila(fila):
     for celda in fila:
         print(celda, end=' ')
+    print()
 
 
 def mostrar_tablero(tablero):
-    for fila in tablero:
-        mostrar_fila(fila)
-        print()
-    # TODO: agregar indices de fila letra y de columna numero
+    fila_abc = 'ABCDEFGHIJKLMNOPQRSTUVXYZ'
+    dimension = len(tablero)
+    print('   ', end='')
+    # for i in range(dimension):
+    #     print(fila_abc[i], end=' ')
+    # print()
+    print(' '.join(list(fila_abc[:dimension])))
+
+    for i in range(dimension):
+        if i < 10:
+            print(' ', end='')
+        print(i, end=' ')
+        mostrar_fila(tablero[i])
 
 
 def posicionar_barco(largo, disposicion, celda_inicial):
@@ -42,6 +51,6 @@ def verificar_hundidos():
     pass
 
 
-tablero = iniciar_tablero(20)
+tablero = iniciar_tablero()
 # mostrar_fila(tablero[0])
 mostrar_tablero(tablero)
