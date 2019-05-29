@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
+ 
 
 def iniciar_tablero(dimension=5):
     celda = '˜'
